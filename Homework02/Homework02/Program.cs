@@ -1,33 +1,24 @@
-﻿namespace Homework02;
-class Program
+﻿using System;
+public class Exercise11
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        Console.Write("Enter a real number:");
-        int number = int.Parse(Console.ReadLine());
-        int n1 = number;
+        string answer;
+        string result;
 
-        int m = 0;
-        for (; number>0; m++)
+        Console.Write("Input a Number : ");
+        answer = Console.ReadLine();
+
+        int num = Convert.ToInt32(answer);
+        result = "";
+        while (num > 1)
         {
-            number /= 10;
+            int remainder = num % 2;
+            result = Convert.ToString(remainder) + result;
+            num /= 2;
         }
-
-        double s1 = 0;
-        double s2 = 0;
-        for(int i=0;i<m; i++)
-        {
-            s1 = n1 % 2;
-            n1 = (int)(n1 - s1) / 2;
-            s2 += s1 * Math.Pow(10, i);
-            
-        }
-        Console.WriteLine(s2);
-
-
-
-
-
+        result = Convert.ToString(num) + result;
+        Console.WriteLine("Binary: {0}", result);
         Console.ReadLine();
     }
 }
