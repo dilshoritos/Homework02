@@ -1,5 +1,5 @@
 ﻿using System;
-public class FactorialExample
+public class Factorial
 {
     public static void Main(string[] args)
     {
